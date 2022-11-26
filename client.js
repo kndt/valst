@@ -18,13 +18,14 @@ const triggerPrompt = () => {
 		socket.emit('search', {query: term});
 		console.log(`Searching for ${term}...`);
 	});
-}
+};
 
 socket.on('search', message => {
 	if (message.error) {
 		console.log(`ERR: No valid matches recieved for query ${query}`);
 		triggerPrompt();
-	} else{
+	}
+	else {
 		const { page, resultCount, name, films } = message;
 		console.log(`(${page}/${resultCount}) ${name} - [${films}]`);
 
