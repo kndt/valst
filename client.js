@@ -41,7 +41,7 @@ socket.on('connect', () => {
 });
 
 socket.on('disconnect', () => {
-	console.log('client connected');
+	console.log('client disconnected');
 });
 
 socket.on('error', message => {
